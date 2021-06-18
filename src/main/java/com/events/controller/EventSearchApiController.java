@@ -63,7 +63,7 @@ public class EventSearchApiController {
 	}
 	
 	@CrossOrigin
-	@GetMapping(path = "/allEventByEvents")
+	@GetMapping(path = "/allEventByFilter")
 	public ResponseEntity<?> getEventsByFilter(@RequestBody FilterCriteria filterCriteria)  {
 		try {
 			List<EventsAndActivities> filteredEvents = eventSearchServiceImpl.getEventsByFilterCriteria(filterCriteria);
