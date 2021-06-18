@@ -1,4 +1,4 @@
-package com.event.module;
+package com.events.module;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.event.controller;
+package com.events.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.event.entity.EventsAndActivities;
-import com.event.module.FilterCriteria;
-import com.event.service.impl.EventSearchServiceImpl;
+import com.events.entity.EventsAndActivities;
+import com.events.module.FilterCriteria;
+import com.events.service.impl.EventSearchServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;

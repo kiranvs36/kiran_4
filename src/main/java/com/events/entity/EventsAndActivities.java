@@ -1,4 +1,4 @@
-package com.event.entity;
+package com.events.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

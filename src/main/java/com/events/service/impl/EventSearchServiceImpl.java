@@ -1,14 +1,14 @@
-package com.event.service.impl;
+package com.events.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.event.dao.EventJpaRepository;
-import com.event.entity.EventsAndActivities;
-import com.event.module.FilterCriteria;
-import com.event.service.EventSearchService;
+import com.events.dao.EventJpaRepository;
+import com.events.entity.EventsAndActivities;
+import com.events.module.FilterCriteria;
+import com.events.service.EventSearchService;
 
 @Service
 public class EventSearchServiceImpl implements EventSearchService {

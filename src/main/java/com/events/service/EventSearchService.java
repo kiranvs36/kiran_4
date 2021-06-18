@@ -1,9 +1,9 @@
-package com.event.service;
+package com.events.service;
 
 import java.util.List;
 
-import com.event.entity.EventsAndActivities;
-import com.event.module.FilterCriteria;
+import com.events.entity.EventsAndActivities;
+import com.events.module.FilterCriteria;
 
 public interface EventSearchService {
 	
