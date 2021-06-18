@@ -2,12 +2,14 @@ package com.events.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="EVENTS_AND_ACTIVITIES")
 public class EventsAndActivities {
 
+	@Id
 	@Column(name="USER_ID", nullable=false)
 	private String userId;
 	@Column(name="EVENT_TYPE", nullable=false)
