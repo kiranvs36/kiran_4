@@ -27,6 +27,8 @@ public class EventSearchServiceImpl implements EventSearchService {
 
 	@Override
 	public List<EventsAndActivities> getEventsByFilterCriteria(FilterCriteria criteria) {
+		
+		List<EventsAndActivities> events = eventJpaRepository.findByEventType(criteria.getEventType());
 		return null;
 	}
 

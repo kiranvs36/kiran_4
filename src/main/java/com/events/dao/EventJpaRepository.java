@@ -11,5 +11,8 @@ import com.events.entity.EventsAndActivities;
 public interface EventJpaRepository extends JpaRepository<EventsAndActivities, String>{
 	
 	public List<EventsAndActivities> findByUserId(String userId);
+	public List<EventsAndActivities> findByEventType(String eventTYpe);
+	public List<EventsAndActivities> findByLocation(String location);
+	public List<EventsAndActivities> findByEventName(String eventName);
 
 }
