@@ -36,11 +36,11 @@ public class EventSearchApiController {
 	@GetMapping(path = "/myEvents/{userId}")
 	public ResponseEntity<?> getUserEvents(@PathVariable("userId")String userId)  {
 		try {
-			List<EventsAndActivities> myBookings = eventSearchServiceImpl.getUserEvents(userId);
-			if(ObjectUtils.isEmpty(myBookings)){
+			List<EventsAndActivities> myEvents = eventSearchServiceImpl.getUserEvents(userId);
+			if(ObjectUtils.isEmpty(myEvents)){
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("RateId not found in RMS");
 			}else {
-			    return ResponseEntity.ok(mapper.writeValueAsString(myBookings));
+			    return ResponseEntity.ok(myEvents);
 			}
 		}catch(Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Exception Occured when getting Events");
@@ -51,11 +51,11 @@ public class EventSearchApiController {
 	@GetMapping(path = "/allEvents")
 	public ResponseEntity<?> getAllEvents()  {
 		try {
-			List<EventsAndActivities> myBookings = eventSearchServiceImpl.getAllEvents();
-			if(ObjectUtils.isEmpty(myBookings)){
+			List<EventsAndActivities> allEvents = eventSearchServiceImpl.getAllEvents();
+			if(ObjectUtils.isEmpty(allEvents)){
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Events available");
 			}else {
-			    return ResponseEntity.ok(mapper.writeValueAsString(myBookings));
+			    return ResponseEntity.ok(mapper.writeValueAsString(allEvents));
 			}
 		}catch(Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Exception Occured when getting Events");
@@ -66,11 +66,12 @@ public class EventSearchApiController {
 	@GetMapping(path = "/allEventByEvents")
 	public ResponseEntity<?> getEventsByFilter(@RequestBody FilterCriteria filterCriteria)  {
 		try {
-			List<EventsAndActivities> myBookings = eventSearchServiceImpl.getEventsByFilterCriteria(filterCriteria);
-			if(ObjectUtils.isEmpty(myBookings)){
+			List<EventsAndActivities> filteredEvents = eventSearchServiceImpl.getEventsByFilterCriteria(filterCriteria);
+			if(ObjectUtils.isEmpty(filteredEvents)){
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Events available");
 			}else {
-			    return ResponseEntity.ok(mapper.writeValueAsString(myBookings));
+			    return ResponseEntity.ok(filteredEvents);
+			    
 			}
 		}catch(Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Exception Occured when getting Events");
