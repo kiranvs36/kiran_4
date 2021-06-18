@@ -29,7 +29,7 @@ public class EventSearchServiceImpl implements EventSearchService {
 	public List<EventsAndActivities> getEventsByFilterCriteria(FilterCriteria criteria) {
 		
 		List<EventsAndActivities> events = eventJpaRepository.findByEventType(criteria.getEventType());
-		return null;
+		return events;
 	}
 
 }
